@@ -2,7 +2,7 @@ export default function AboutMe() {
     return (
         <div className="flex justify-center relative top-24">
             <span className="p-5 shadow-xl max-w-sx">
-                <div className="text-4xl mb-4 ml-3">
+                <div className="text-4xl mb-4 flex justify-center text-blue-500 font-sans font-bold">
                     Hello, I&rsquo;m Gabriel Molocea
                 </div>
                 <div className="max-w-20">
