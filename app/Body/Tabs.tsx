@@ -1,0 +1,102 @@
+'use client'
+
+import { useState } from 'react'
+import { Tab } from '@headlessui/react'
+
+function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(' ')
+}
+
+export default function Tabs() {
+    let [categories] = useState({
+        'About me': [
+            {
+                id: 1,
+                title: ' Highly motivated and accomplished self-taught Frontend Engineer with over 2 year sof commercial experience in leveraging React, Redux, Typescript, JavaScript, andREST APIs to create exceptional user interfaces. Passionate about delivering seamless and visually captivating web applications, I am seeking a challenging role to contribute my expertise and continue to excel as a front-end engineer. With a strong foundation in self-directed learning and a proven track record of success, Iam dedicated to pushing the boundaries of front-end development and crafting immersive digital experiences.',
+            }
+
+        ],
+        Work: [
+            {
+                id: 1,
+                title: 'Is tech making coffee better or worse?',
+                date: 'Jan 7',
+                commentCount: 29,
+                shareCount: 16,
+            },
+            {
+                id: 2,
+                title: 'The most innovative things happening in coffee',
+                date: 'Mar 19',
+                commentCount: 24,
+                shareCount: 12,
+            },
+        ],
+        Skills: [
+            {
+                id: 1,
+                title: 'Ask Me Anything: 10 answers to your questions about coffee',
+                date: '2d ago',
+                commentCount: 9,
+                shareCount: 5,
+            },
+            {
+                id: 2,
+                title: "The worst advice we've ever heard about coffee",
+                date: '4d ago',
+                commentCount: 1,
+                shareCount: 2,
+            },
+        ],
+    })
+
+    return (
+        <div className="w-full max-w-md px-2 py-16 sm:px-0 ml-4 drop-shadow-lg">
+            <Tab.Group>
+                <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+                    {Object.keys(categories).map((category) => (
+                        <Tab
+                            key={category}
+                            className={({ selected }) =>
+                                classNames(
+                                    'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700',
+                                    'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
+                                    selected
+                                        ? 'bg-white shadow'
+                                        : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                                )
+                            }
+                        >
+                            {category}
+                        </Tab>
+                    ))}
+                </Tab.List>
+                <Tab.Panels className="mt-2">
+                    {Object.values(categories).map((posts, idx) => (
+                        <Tab.Panel
+                            key={idx}
+                            className={classNames(
+                                'rounded-xl bg-white p-3',
+                                'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
+                            )}
+                        >
+                            <ul>
+                                {posts.map((post) => (
+                                    <li
+                                        key={post.id}
+                                        className="relative rounded-md p-3 "
+                                    >
+                                        <h3 className="text-sm font-medium leading-5">
+                                            {post.title}
+                                        </h3>
+                                       
+                                    </li>
+                                ))}
+                            </ul>
+                        </Tab.Panel>
+                    ))}
+                </Tab.Panels>
+            </Tab.Group>
+        </div>
+    )
+}
