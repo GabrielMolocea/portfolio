@@ -8,9 +8,6 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'sun': 'url(/images/Sun.png)',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
