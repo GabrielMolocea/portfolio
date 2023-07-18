@@ -7,7 +7,7 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Tabs() {
+export default function Tabs({ isDarkMode }: { isDarkMode: boolean }) {
     let [categories] = useState({
         'About me': [
             {
@@ -42,7 +42,7 @@ export default function Tabs() {
             },
             {
                 id: 2,
-                title: "The worst advice we've ever heard about coffee",
+                title: '',
                 date: '4d ago',
                 commentCount: 1,
                 shareCount: 2,
@@ -51,19 +51,20 @@ export default function Tabs() {
     })
 
     return (
-        <div className="w-full max-w-md px-2 py-16 sm:px-0 ml-4 drop-shadow-lg">
+        <div className='w-full max-w-md px-2 py-16 sm:px-0 ml-4 drop-shadow-lg'>
             <Tab.Group>
-                <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+                <Tab.List className={`flex space-x-1 rounded-xl bg-blue-900/20 p-1 ${isDarkMode ? 'dark:bg-gray-400 dark:border-gray-700 dark:hover:bg-gray-300' : ''}`} >
                     {Object.keys(categories).map((category) => (
                         <Tab
                             key={category}
                             className={({ selected }) =>
                                 classNames(
-                                    'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700',
+                                    `w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700 ${isDarkMode ? 'dark:text-white' : ''}`,
                                     'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
+                                    isDarkMode ? 'dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 ' : '',
                                     selected
                                         ? 'bg-white shadow'
-                                        : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                                        : `text-blue-100 hover:bg-white/[0.12] hover:text-white ${isDarkMode ? 'dark:text-slate-300' : ''}`
                                 )
                             }
                         >
@@ -71,25 +72,26 @@ export default function Tabs() {
                         </Tab>
                     ))}
                 </Tab.List>
-                <Tab.Panels className="mt-2">
+                <Tab.Panels className='mt-2'>
                     {Object.values(categories).map((posts, idx) => (
                         <Tab.Panel
                             key={idx}
                             className={classNames(
                                 'rounded-xl bg-white p-3',
-                                'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
+                                'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
+                                isDarkMode ? 'dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700' : ''
                             )}
                         >
                             <ul>
                                 {posts.map((post) => (
                                     <li
                                         key={post.id}
-                                        className="relative rounded-md p-3 "
+                                        className='relative rounded-md p-3 '
                                     >
-                                        <h3 className="text-sm font-medium leading-5">
+                                        <h3 className={`text-sm font-medium leading-5 ${isDarkMode ? 'dark:text-white' : ''}`}>
                                             {post.title}
                                         </h3>
-                                       
+
                                     </li>
                                 ))}
                             </ul>
