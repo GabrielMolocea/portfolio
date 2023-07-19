@@ -50,14 +50,14 @@ export default function Tabs({ isDarkMode }: { isDarkMode: boolean }) {
                             {() => (
                                 <>
                                     <Disclosure.Button className="rounded-lg bg-blue-400 px-4 py-2 text-left text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-opacity-75 w-[100%]">
-                                    <div className='flex justify-between'>
+                                        <div className='flex justify-between'>
                                             <p>Aquasoft</p>
                                             <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-white">
                                                 <li>{'2021-2022'}</li>
 
                                             </ul>
                                         </div>
-                                        
+
                                     </Disclosure.Button>
                                     <Disclosure.Panel className="text-gray-500">
                                         <ul className='list-disc pl-2 pt-2'>
@@ -78,17 +78,39 @@ export default function Tabs({ isDarkMode }: { isDarkMode: boolean }) {
         Skills: [
             {
                 id: 1,
-                title: 'Ask Me Anything: 10 answers to your questions about coffee',
-                date: '2d ago',
-                commentCount: 9,
-                shareCount: 5,
+                title: (<div className='grid grid-cols-1 divide-y-4'>
+                    <div className='pt-2 pb-2 flex justify-center'>
+                        <img className='p-2' src='' alt='React' />
+                    </div>
+                    <div className='pt-2 pb-2 flex justify-center'>
+                        <img className='p-2' src='' alt='Restful API`s' />
+                        <img className='p-2' src='' alt='GrapfhQL' />
+                    </div>
+                    <div className='pt-2 pb-2 flex justify-center'>
+                        <img className='p-2' src='' alt='JavaScript' />
+                        <img className='p-2' src='' alt='HTML5' />
+                        <img className='p-2' src='' alt='CSS3' />
+                    </div>
+                </div>),
             },
+        ],
+        'Contact me': [
             {
-                id: 2,
-                title: '',
-                date: '4d ago',
-                commentCount: 1,
-                shareCount: 2,
+                id: 1,
+                title: (<div className='grid grid-cols-1 divide-y-4'>
+                    <div className='pt-2 pb-2 flex justify-center'>
+                        <img className='p-2' src='' alt='React' />
+                    </div>
+                    <div className='pt-2 pb-2 flex justify-center'>
+                        <img className='p-2' src='' alt='Restful API`s' />
+                        <img className='p-2' src='' alt='GrapfhQL' />
+                    </div>
+                    <div className='pt-2 pb-2 flex justify-center'>
+                        <img className='p-2' src='' alt='JavaScript' />
+                        <img className='p-2' src='' alt='HTML5' />
+                        <img className='p-2' src='' alt='CSS3' />
+                    </div>
+                </div>),
             },
         ],
     })
