@@ -11,7 +11,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'} min-w-full`}>
+    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
       <div className="flex justify-center pt-4 ">
         <button className="w-10 h-10 " onClick={toggleTheme}>
           <img className={`rounded-full ring p-1 ${isDarkMode ? 'ring-black' : 'ring-blue-700'} `} src={isDarkMode ? "images/Moon.png" : "images/Sun.png"} alt="Toggle Theme" />
