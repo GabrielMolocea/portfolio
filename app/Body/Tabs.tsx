@@ -40,7 +40,12 @@ export default function Tabs({ isDarkMode }: { isDarkMode: boolean }) {
         Projects: [
             {
                 id: 1,
-                title: (<div></div>)
+                title: (<div className='flex'>
+                    <img className='w-24 h-24 rounded rounded-full pr-4' src='images/netflix-clone.jpg' alt='netflix-clone' />
+                    <p>Created a clone for the most used streaming site of movies and series, Netflix.
+                        The object for this project is to have a better understatement of state in React.js, CSS3 and Testing for Components.
+                    </p>
+                </div>)
             }
         ],
         'Contact me': [
