@@ -25,7 +25,7 @@ export default function Info({ isDarkMode }: { isDarkMode: boolean }) {
         >
             <img className="rounded-full mb-3" src="images/Profile.jpeg" alt="Profile image" />
             <h5 className={`mb-2 text-2xl font-bold tracking-tight text-gray-900 ${isDarkMode ? 'dark:text-white' : ''}`}>Gabriel Molocea</h5>
-            <div className="flex flex-row justify-center">
+            <div className="flex flex-row justify-center"> 
                 <img
                     className="w-8 h-8 m-3"
                     id="github"
