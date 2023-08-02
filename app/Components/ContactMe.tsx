@@ -14,18 +14,20 @@ export default function ContactMe({ isDarkMode }: { isDarkMode: boolean }) {
   return (
     <>
       <div className="flex justify-between mb-1">
-        <span className={` text-base font-medium text-gray-900 ${isDarkMode ? 'dark:text-white' : ''}`}>Email</span>
+        <span className={`text-base font-medium ${isDarkMode ? 'dark:text-white text-white' : ''}`}>Email</span>
       </div>
-      <div className="my-6 overflow-auto rounded-xl border-2 border-gray-700 border-opacity-25 bg-black bg-opacity-25  ">
-        <pre className="language-shell float-left min-w-full bg-black bg-opacity-75 text-white" onClick={() => copyToClipboard(email)} style={{ cursor: "pointer" }}>
+      <div className={`my-6 overflow-auto rounded-xl border-2 p-2 ${isDarkMode ? 'border-gray-700 border-opacity-25 bg-black bg-opacity-25' : ''}`}>
+        <pre className={`language-shell float-left min-w-full ${isDarkMode ? 'dark:text-white bg-black bg-opacity-75 text-white' : ''}`}
+          onClick={() => copyToClipboard(email)} style={{ cursor: "pointer" }}>
           {email}
         </pre>
       </div>
       <div className="flex justify-between mb-1">
-        <span className={`text-base font-medium text-gray-900 ${isDarkMode ? 'dark:text-white' : ''}`}>PhoneNumber</span>
+        <span className={`text-base font-medium ${isDarkMode ? 'dark:text-white text-white' : ''}`}>PhoneNumber</span>
       </div>
-      <div className="my-6 overflow-auto rounded-xl border-2 border-gray-700 border-opacity-25 bg-black bg-opacity-25  ">
-        <pre className="language-shell float-left min-w-full bg-black bg-opacity-75 text-white" onClick={() => copyToClipboard(email)} style={{ cursor: "pointer" }}>
+      <div className={`my-6 overflow-auto rounded-xl border-2 p-2 ${isDarkMode ? 'border-gray-700 border-opacity-25 bg-black bg-opacity-25' : ''}`}>
+        <pre className={`language-shell float-left min-w-full ${isDarkMode ? 'dark:text-white bg-black bg-opacity-75 text-white' : ''}`}
+          onClick={() => copyToClipboard(phoneNumber)} style={{ cursor: "pointer" }}>
           {phoneNumber}
         </pre>
       </div>

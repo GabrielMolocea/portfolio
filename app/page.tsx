@@ -17,7 +17,7 @@ export default function Home() {
           <img className={`rounded-full ring p-1 ${isDarkMode ? 'ring-black' : 'ring-blue-700'} `} src={isDarkMode ? "images/Moon.png" : "images/Sun.png"} alt="Toggle Theme" />
         </button>
       </div>
-      <div className={`flex justify-center self-center pt-20 ${isDarkMode ? 'dark' : ''}`}>
+      <div className={`flex flex-col items-center lg:flex-row lg:justify-center lg:self-center pt-20 ${isDarkMode ? 'dark' : ''}`}>
         <Info isDarkMode={isDarkMode} />
         <Tabs isDarkMode={isDarkMode} />
       </div>
