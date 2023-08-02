@@ -30,12 +30,12 @@ export default function Info({ isDarkMode }: { isDarkMode: boolean }) {
                 <img
                     className="w-8 h-8 m-3"
                     id="github"
-                    src="/images/github.png"
+                    src= {isDarkMode ? '/images/github-white.png': "/images/github.png"}
                     alt="github"
                     onClick={handleClick}
                 />
                 <img
-                    className="w-8 h-8 m-3"
+                    className="w-12 h-12 m-1"
                     id="linkedin"
                     src="/images/linkedin.png"
                     alt="linkedin"
