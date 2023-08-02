@@ -57,7 +57,7 @@ export default function Tabs({ isDarkMode }: { isDarkMode: boolean }) {
     })
 
     return (
-        <div className='w-full max-w-md px-2 py-16 sm:px-0 ml-4 drop-shadow-lg'>
+        <div className='w-full max-w-md px-2 py-16 sm:px-0 ml-0 lg:ml-4 drop-shadow-lg'>
             <Tab.Group>
                 <Tab.List className={`flex space-x-1 rounded-xl bg-blue-900/20 p-1 ${isDarkMode ? 'dark:bg-gray-400 dark:border-gray-700 dark:hover:bg-gray-300' : ''}`} >
                     {Object.keys(categories).map((category) => (

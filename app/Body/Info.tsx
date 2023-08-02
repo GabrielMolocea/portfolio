@@ -21,11 +21,12 @@ export default function Info({ isDarkMode }: { isDarkMode: boolean }) {
 
     return (
         <div
-            className={`block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 mr-4 drop-shadow-lg ${isDarkMode ? "dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" : ""}`}
+            className={`block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 drop-shadow-lg sm:ml-2 sm:mr-2 lg:mr-4 ${isDarkMode ? "dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" : ""
+                }`}
         >
             <img className="rounded-full mb-3" src="images/Profile.jpeg" alt="Profile image" />
             <h5 className={`mb-2 text-2xl font-bold tracking-tight text-gray-900 ${isDarkMode ? 'dark:text-white' : ''}`}>Gabriel Molocea</h5>
-            <div className="flex flex-row justify-center"> 
+            <div className="flex flex-row justify-center">
                 <img
                     className="w-8 h-8 m-3"
                     id="github"
