@@ -27,20 +27,10 @@ export default function Info({ isDarkMode }: { isDarkMode: boolean }) {
             <img className="rounded-full mb-3" src="images/Profile.jpeg" alt="Profile image" />
             <h5 className={`mb-2 text-2xl font-bold tracking-tight text-gray-900 ${isDarkMode ? 'dark:text-white' : ''}`}>Gabriel Molocea</h5>
             <div className="flex flex-row justify-center">
-                <img
-                    className="w-8 h-8 m-3"
-                    id="github"
-                    src= {isDarkMode ? '/images/github-white.png': "/images/github.png"}
-                    alt="github"
-                    onClick={handleClick}
-                />
-                <img
-                    className="w-12 h-12 m-1"
-                    id="linkedin"
-                    src="/images/linkedin.png"
-                    alt="linkedin"
-                    onClick={handleClick}
-                />
+                <Image id="github" className="w-12 h-12 m-1" src={isDarkMode ? '/images/github-white.png' : "/images/github.png"} height={64} width={64} alt="github"
+                    onClick={handleClick} />
+                <Image id="linkedin" className="w-12 h-12 m-1" src="/images/linkedin.png" height={64} width={64} alt="linkedin"
+                    onClick={handleClick} />
             </div>
             <h5 className={`mb-2 text-xl font-bold tracking-tight text-gray-900 ${isDarkMode ? 'dark:text-white pt-5' : ''}`}>Languages</h5>
             <ProgressBar title={"Romanian"} percentage={100} isDarkMode={isDarkMode} />
