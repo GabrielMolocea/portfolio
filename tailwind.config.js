@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        'github-light': "url('/images/github.png')",
+        'github-dark': "url('/images/github-white.png')",
+        'linkedin': "url('/images/linkedin.png')"
       },
     },
   },

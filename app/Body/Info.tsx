@@ -1,7 +1,6 @@
-"use client"
 import { useRouter } from "next/navigation";
 import ProgressBar from "../Components/ProgressBar";
-import Image from "next/image";
+import { MouseEventHandler } from "react";
 
 export default function Info({ isDarkMode }: { isDarkMode: boolean }) {
     const router = useRouter();
@@ -14,7 +13,7 @@ export default function Info({ isDarkMode }: { isDarkMode: boolean }) {
         }
     };
 
-    const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
+    const handleClick: MouseEventHandler<HTMLButtonElement> = (event) => {
         const id = event.currentTarget.id;
         redirectToPage(id);
     };
@@ -27,10 +26,25 @@ export default function Info({ isDarkMode }: { isDarkMode: boolean }) {
             <img className="rounded-full mb-3" src="images/Profile.jpeg" alt="Profile image" />
             <h5 className={`mb-2 text-2xl font-bold tracking-tight text-gray-900 ${isDarkMode ? 'dark:text-white' : ''}`}>Gabriel Molocea</h5>
             <div className="flex flex-row justify-center">
-                <Image id="github" className="w-12 h-12 m-1" src={isDarkMode ? 'images/github-white.png' : "/images/github.png"} height={64} width={64} alt="github"
-                    onClick={handleClick} />
-                <Image id="linkedin" className="w-12 h-12 m-1" src="images/linkedin.png" height={64} width={64} alt="linkedin"
-                    onClick={handleClick} />
+
+                <div className="flex flex-col items-center mr-4">
+                    <button
+                        id="linkedin"
+                        className="w-12 h-12 bg-linkedin bg-contain mb-2"
+                        onClick={handleClick}
+                    />
+                    <span className={`${isDarkMode ? 'dark:text-white': ''}`}>LinkedIn</span>
+                </div>
+
+                <div className="flex flex-col items-center">
+                    <button
+                        id="github"
+                        className={`w-12 h-12 ${isDarkMode ? 'bg-github-dark' : 'bg-github-light'} bg-contain mb-2`}
+                        onClick={handleClick}
+
+                    />
+                    <span className={`${isDarkMode ? 'dark:text-white': ''}`}>GitHub</span>
+                </div>
             </div>
             <h5 className={`mb-2 text-xl font-bold tracking-tight text-gray-900 ${isDarkMode ? 'dark:text-white pt-5' : ''}`}>Languages</h5>
             <ProgressBar title={"Romanian"} percentage={100} isDarkMode={isDarkMode} />
@@ -38,4 +52,3 @@ export default function Info({ isDarkMode }: { isDarkMode: boolean }) {
         </div>
     );
 }
-
