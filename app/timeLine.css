@@ -8,19 +8,92 @@
 	padding: 10px 50px;
 	position: relative;
 	width: 50%;
-	background: rgba(0, 0, 0, 0.3);
+
+	img {
+		background-color: #b6b6b6;
+		position: absolute;
+		width: 80px;
+		border-radius: 50%;
+		right: -40px;
+		top: 32px;
+		z-index: 10;
+	}
 }
 
 .text-box {
-  padding: 20px 30px;
-  background: #fff;
-  position: relative;
-  border-radius: 6px;
-  font-size: 15px;
+	padding: 20px 30px;
+	background: #fff;
+	position: relative;
+	border-radius: 6px;
+	font-size: 15px;
+	z-index: 2;
+
+	h2 {
+		font-weight: 600;
+	}
+
+	small {
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+}
+
+.left-container {
+	left: 0;
+}
+
+.right-container {
+	left: 50%;
+
+	img {
+		left: -40px;
+	}
+}
+
+.timeline::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 0;
+	bottom: 0; /* ensure full height of the timeline */
+	width: 6px;
+	background-color: #e0e0e0; /* neutral visible color - adjust as needed */
+	transform: translateX(-50%);
+	z-index: 0; /* keep it behind content but above page background */
+}
+
+.left-container-arrow {
+	height: 0;
+	width: 0;
+	position: absolute;
+	top: 28px;
+	z-index: 1;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid #fff;
+	right: -15px;
+}
+.right-container-arrow {
+	height: 0;
+	width: 0;
+	position: absolute;
+	top: 28px;
+	z-index: 1;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid #fff;
+	left: -16px;
 }
 
 @media (prefers-color-scheme: dark) {
-	.container {
-		background: rgba(255, 255, 255, 0.3);
+	.text-box {
+		background: #b6b6b6;
+		color: #fff;
+	}
+	.left-container-arrow {
+		border-left: 15px solid #b6b6b6;
+	}
+	.right-container-arrow {
+		border-right: 15px solid #b6b6b6;
 	}
 }
