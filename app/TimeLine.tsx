@@ -30,30 +30,51 @@ const jobHistory = [
 	},
 ];
 
-function TimeLine() {
+type Job = {
+	id: number;
+	title: string;
+	company: string;
+	timeframe?: string;
+	description: string;
+	image?: string;
+};
+
+const TimelineItem = ({
+	job,
+	sided,
+}: {
+	job: Job;
+	sided: "left" | "right";
+}) => (
+	<div className="timeline-item">
+		<div className="timeline-item-content">
+			{/* {job.image && (
+			<img src={job.image} alt={`${job.company} logo`} className="company-logo" />
+		)} */}
+			<span
+				className="tag"
+				// style={{ background: data.category.color }}
+			>
+				{job.company}
+			</span>
+			<h2>{job.title}</h2>
+			{<time>{job.timeframe}</time>}
+			<p>{job.description}</p>
+			<span className="circle" />
+		</div>
+	</div>
+);
+
+export default function TimeLine() {
 	return (
-		<div className="timeline">
+		<div className="timeline-container">
 			{jobHistory.map((job, index) => (
-				<div
+				<TimelineItem
 					key={job.id}
-					className={`container ${
-						index % 2 === 0 ? "left-container" : "right-container"
-					}`}
-				>
-					<img
-						src={job.image}
-						alt={`${job.company} logo`}
-						className="company-logo"
-					/>
-					<div className="text-box">
-						<h2>{job.title}</h2>
-						<small>{job.company}</small>
-						<p>{job.description}</p>
-            <span className={`${index % 2 === 0 ? "left-container-arrow" : "right-container-arrow"}`}></span>
-					</div>
-				</div>
+					job={job}
+					sided={index % 2 === 0 ? "left" : "right"}
+				/>
 			))}
 		</div>
 	);
 }
-export default TimeLine;
