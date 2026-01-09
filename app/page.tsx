@@ -1,10 +1,12 @@
+import AboutMe from "./AboutMe";
 import TimeLine from "./TimeLine";
 
 export default function Home() {
 	return (
 		<>
-			<div>Presentation of me</div>
+			<AboutMe />
 			<TimeLine />
-		</>
+			{/* Todo: Add contact section */}
+					</>
 	);
 }
