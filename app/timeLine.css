@@ -161,20 +161,14 @@ h1 {
 }
 
 @media only screen and (max-width: 1023px) {
-	.timeline-container::after {
-		left: 24px; 
+	.timeline-item {
+		width: 100%;
+		justify-content: center;
 	}
 
 	.timeline-item {
-		width: 100%;
-		padding: 10px 20px;
-		justify-content: flex-start;
-	}
-
-	.timeline-item:nth-child(odd) {
-		align-self: stretch;
-		padding-left: 20px;
-		padding-right: 20px;
+		align-self: center;
+		justify-content: center;
 	}
 
 	.timeline-item-content,
@@ -185,22 +179,16 @@ h1 {
 		max-width: calc(100% - 60px);
 	}
 
-	.timeline-item-content::after {
-		display: block;
-	}
-
-	.timeline-item-content .circle {
-		right: -36px;
+	.timeline-item-content .circle,
+	.timeline-item-content::after,
+	.timeline-container:after {
+		display: none;
 	}
 }
 
 @media only screen and (max-width: 767px) {
 	.timeline-container::after {
 		left: 18px;
-	}
-
-	.timeline-item {
-		padding: 8px 12px;
 	}
 
 	.timeline-item-content,
@@ -239,7 +227,6 @@ h1 {
 }
 
 @media only screen and (max-width: 480px) {
-	/* Very small phones: tighten spacing and font sizes */
 	.timeline-item-content {
 		padding: 10px;
 	}
@@ -250,7 +237,7 @@ h1 {
 	}
 
 	footer {
-		position: static; /* avoid covering content */
+		position: static;
 	}
 }
 
